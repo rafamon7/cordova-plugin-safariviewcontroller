@@ -19,8 +19,7 @@
     return;
   }
   if (![[urlString lowercaseString] hasPrefix:@"http"]) {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: UIApplication]];
-    // [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"url must start with http or https"] callbackId:command.callbackId];
+    [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"url must start with http or https"] callbackId:command.callbackId];
     return;
   }
   NSURL *url = [NSURL URLWithString:urlString];
